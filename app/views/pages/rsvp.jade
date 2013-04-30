@@ -1,0 +1,62 @@
+extends ../layouts/default
+
+block main
+	h2= title
+
+block content
+	.row-fluid
+		.span12
+			h4.paddingBottom Please RSVP by 20 May 2013!
+
+	.row-fluid
+		.span6
+			form.login.form-horizontal(action="/rsvp/result", method="post")
+				.control-group
+					label.control-label(for='full_name') Full name
+					.controls
+						input#full_name(type='text', name="fullName", placeholder="Full name")
+				.control-group
+					label.control-label(for='partners_name') Partner's full name (if applicable)
+					.controls
+						input#partners_name(type='text', name="partnersName", placeholder="Partner's full name")
+				.span12.radio-group
+					h4.text-center Will you be celebrating with us?
+					.control-group
+						label.control-label(for="yesWithBells") Yes, I/we will be joining you with bells on!
+						.controls
+							input#yesWithBells(type='radio', name="rsvp", value="yesWithBells")
+					.control-group
+						label.control-label(for="yesNoBells") Yes, I/we will be joining you, but unfortunately have a phobia of bells
+						.controls
+							input#yesNoBells(type='radio', name="rsvp", value="yesNoBells")
+					.control-group
+						label.control-label(for="no") No, sadly we are unable to join you
+						.controls
+							input#no(type='radio', name="rsvp", value="no")
+				.row-fluid
+					.span12.dietaryRequirements
+						.control-group
+							label.control-label(for='dietry_requirements') Dietary request
+							.controls
+								select#dietary_requirements(name="dietaryRequirements")
+									option(value="", selected="selected") Please select...
+									option(value="Meat") Meat 
+									option(value="Vegetarian") Vegetarian
+									option(value="Other") Other (please add details below)
+						.control-group
+							label.control-label(for='partner_dietry_requirements') Partner's dietary request (if applicable)
+							.controls
+								select#partner_dietary_requirements(name="partnerDietaryRequirements")
+									option(value="", selected="selected") Please select...
+									option(value="Meat") Meat 
+									option(value="Vegetarian") Vegetarian
+									option(value="Other") Other (please add details below)
+						.control-group
+								label.control-label(for="anythingToAdd") Anything to add?
+								.controls
+									textarea#anythingToAdd(name="anythingToAdd")
+				.form-actions
+					button.btn.btn-primary(type='submit') Submit
+		.span6
+			img(src="img/rsvp.jpg", width="600", class="shadow")
+

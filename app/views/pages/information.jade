@@ -1,0 +1,37 @@
+extends ../layouts/default
+
+block main
+  h2= title
+
+block content
+  .row-fluid
+    .span6 
+      h3 Ceremony &amp; Reception
+      dl.dl-horizontal.event-details
+        dt.highlight-colour1 Date
+        dd 1 June 2013
+        dt.highlight-colour1 Time
+        dd 4pm
+        dt.highlight-colour1 Location
+        dd
+          address
+            | Devonshire Terrace
+            br 
+            | Devonshire Square
+            br
+            | London
+            br
+            | EC2M 4WY
+    .span6
+      img(src="img/forever.jpg", width="600", class="shadow")
+  .row-fluid
+    .span12
+      h3 Transport &amp; Directions
+      p 
+        | Please 
+        a.external(href="http://maps.google.com/maps?q=EC2M4WY") click here 
+        | for a map of the location. 
+      p The closest rail and tube station is Liverpool Street, which is only a two-minute walk from Devonshire Terrace. From the station, take the escalators near Platform 15 onto Bishopsgate. Cross the road at the traffic lights directly in front of you and head up New Street. At the top of New Street, go through the archway into Devonshire Square, and Devonshire Terrace will be on your left.  
+      p If you&rsquo;re travelling by car, the nearest 24&ndash;hour carpark is located a five&ndash;minute walk away on White&rsquo;s Row, E1 7NF.
+
+  
