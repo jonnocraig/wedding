@@ -70,6 +70,8 @@ exports.rsvpResult = function (req, res) {
 
 	console.log("body", req.body);
 
+	var bodyObj = req.body;
+
 	rsvp.save(function(err, rsvp) {
 		if (err) {
 			console.log("error", err);
@@ -79,9 +81,9 @@ exports.rsvpResult = function (req, res) {
 
 		/* send an email */
 		var html = "";
-		for (var key in req.body) {
-			if (req.body.hasOwnProperty(key)) {
-				html += "<p><strong>" + key + "</strong></p>" + "<p>" + req.body[key] + "<p>";
+		for (var key in bodyObj) {
+			if (bodyObj.hasOwnProperty && bodyObj.hasOwnProperty(key)) {
+				html += "<p><strong>" + key + "</strong></p>" + "<p>" + bodyObj[key] + "<p>";
 				// console.log("key: ", key);
 				// console.log("val: ", req.body[key]);
 			}
